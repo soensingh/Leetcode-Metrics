@@ -1,0 +1,149 @@
+:root {
+    --progress-degree: 0%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #414e61;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.main-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgb(63, 63, 63);
+    padding: 2rem;
+    width: 450px;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.user-container input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.user-container input:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+    margin-right: 5px;
+}
+
+.user-container button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.user-container button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.circle {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.progress {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-easy {
+    background: conic-gradient(rgb(0, 156, 34) var(--progress-degree), rgb(0, 65, 0) 0%);
+}
+
+.progress-medium {
+    background: conic-gradient(rgb(0, 34, 156) var(--progress-degree), rgb(0, 0, 65) 0%);
+
+}
+
+.progress-hard {
+    background: conic-gradient(rgb(156, 0, 34) var(--progress-degree), rgb(65, 0, 0) 0%);
+}
+
+.stats-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.8rem;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background-color: #db981b;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  width: 183px;
+
+  opacity: 0; 
+  animation: fadeIn 0.5s ease-out forwards; 
+
+  animation-delay: calc(var(--card-index, 0) * 0.1s);
+}
+
+.status-message-red {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: red;
+}
+
+.status-message-green {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: rgb(0, 228, 0);
+}
